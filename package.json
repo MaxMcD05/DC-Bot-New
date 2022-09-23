@@ -15,12 +15,5 @@
   "bugs": {
     "url": "https://github.com/MakerMush/dcbot22/issues"
   },
-  "homepage": "https://github.com/MakerMush/dcbot22#readme",
-  "dependencies": {
-    "discord.js": "^14.4.0",
-    "dotenv": "^16.0.2"
-  },
-  "devDependencies": {
-    "eslint": "^8.23.1"
-  }
+  "homepage": "https://github.com/MakerMush/dcbot22#readme"
 }
