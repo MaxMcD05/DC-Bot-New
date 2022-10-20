@@ -5,6 +5,6 @@ module.exports = {
 		.setName('hifive')
 		.setDescription('gimme five'),
 	async execute(interaction) {
-		await interaction.reply(`✋`);
+		await interaction.reply(`gimme five`).then(() => interaction.react('✋'));
 	},
 };

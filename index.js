@@ -19,6 +19,10 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
+client.on('messageCreate', async message => {
+
+});
+
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
