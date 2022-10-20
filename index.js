@@ -3,7 +3,7 @@ const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages ] });
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
@@ -19,9 +19,11 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('messageCreate', async message => {
-
-});
+client.on("messageCreate", (message) => {
+	if (message.author.bot) return false; 
+	
+	console.log(`Message from ${message.author.username}: ${message.content}`);
+  });
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
