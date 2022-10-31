@@ -38,6 +38,17 @@ client.on('interactionCreate', async interaction => {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
+
+	client.on('message', message => {
+		if(message.content.toLowerCase() === 'shut ur mouth')
+		message.channel.send('do not say that' + message.author);
+
+		else if(message.content.toLowerCase() === 'bot dif')
+		message.channel.send('cap, Zoid dif' + message.author);
+
+		else if(message.content.toUpperCase() === 'Help')
+		message.channel.send('nah' + message.author);
+	})
 });
 
 client.login(token);
