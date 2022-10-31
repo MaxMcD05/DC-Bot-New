@@ -48,6 +48,28 @@ client.on('interactionCreate', async interaction => {
 
 		else if(message.content.toUpperCase() === 'Help')
 		message.channel.send('nah' + message.author);
+
+		else if(message.content.toLowerCase() === 'L')
+		message.channel.send('Tis what i am saying' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Watermelon')
+		message.channel.send('西瓜' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Apple')
+		message.channel.send('苹果' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Banana')
+		message.channel.send('香蕉' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Strawberry')
+		message.channel.send('草莓' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Grape')
+		message.channel.send('葡萄' + message.author);
+
+		else if(message.content.toLowerCase() === 'translate: Orange')
+		message.channel.send('橘子' + message.author);
+
 	})
 });
 
