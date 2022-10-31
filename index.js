@@ -8,12 +8,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-
+const messages = ["message one", "message two", "message three", "message four"]
+const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
 	const command = require(filePath);
 	client.commands.set(command.data.name, command);
 }
+
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -70,6 +72,7 @@ client.on('interactionCreate', async interaction => {
 		else if(message.content.toLowerCase() === 'translate: Orange')
 		message.channel.send('橘子' + message.author);
 
+		
 	})
 });
 
