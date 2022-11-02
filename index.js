@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-const dictionary = [{e:'english', c:'watermelon,apple,banana,strawberry,grape,orange,dog,cat,dolphin,gorilla'},{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'banana', c:'香蕉'},{e:'strawberry', c:'草莓'},{e:'grape', c:'葡萄'},{e:'orange', c:'橘子'},{e:'dog', c:'狗'},{e:'cat', c:'猫'},{e:'chicken', c:'鸡'},{e:'dolphin', c:'海豚'},{e:'gorilla', c:'大猩猩'}];
+const dictionary = [{e:'chinese', c:'西瓜, 苹果, 香蕉, 草莓, 葡萄, 橙子, 狗, 猫, 海豚, 大猩猩'},{e:'english', c:'watermelon, apple, banana, strawberry, grape, orange, dog, cat, dolphin, gorilla'},{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'banana', c:'香蕉'},{e:'strawberry', c:'草莓'},{e:'grape', c:'葡萄'},{e:'orange', c:'橘子'},{e:'dog', c:'狗'},{e:'cat', c:'猫'},{e:'chicken', c:'鸡'},{e:'dolphin', c:'海豚'},{e:'gorilla', c:'大猩猩'}];
 
 client.once('ready', () => {
 	console.log('Ready!');
