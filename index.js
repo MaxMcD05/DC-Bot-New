@@ -42,36 +42,67 @@ client.on('interactionCreate', async interaction => {
 
 	client.on('message', message => {
 		if(message.content.toLowerCase() === 'shut ur mouth'){
-		message.channel.send('do not say that' + message.author);}
+		message.channel.send('do not say that' + message.author)};
 
 		else if(message.content.toLowerCase() === 'bot dif'){
-			message.channel.send('cap, Zoid dif' + message.author);}
+			message.channel.send('cap, Zoid dif' + message.author)};
 
 		else if(message.content.toUpperCase() === 'Help'){
-		message.channel.send('nah' + message.author);}
+		message.channel.send('nah' + message.author)};
 
 		else if(message.content.toLowerCase() === 'L'){
-		message.channel.send('Tis what i am saying' + message.author);}
+		message.channel.send('Tis what i am saying' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Watermelon'){
-		message.channel.send('西瓜' + message.author);}
+		message.channel.send('西瓜' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Apple'){
-		message.channel.send('苹果' + message.author);}
+		message.channel.send('苹果' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Banana'){
-		message.channel.send('香蕉' + message.author);}
+		message.channel.send('香蕉' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Strawberry'){
-		message.channel.send('草莓' + message.author);}
+		message.channel.send('草莓' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Grape'){
-		message.channel.send('葡萄' + message.author);}
+		message.channel.send('葡萄' + message.author)};
 
 		else if(message.content.toLowerCase() === 'translate: Orange'){
-		message.channel.send('橘子' + message.author);}
+		message.channel.send('橘子' + message.author)};
 
-		
+		else if(message.content.toLowerCase() === 'translate: 橘子'){
+		message.channel.send('Orange' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: Dog'){
+		message.channel.send('狗' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: 狗'){
+		message.channel.send('Dog' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: Cat'){
+		message.channel.send('猫' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: 猫'){
+		message.channel.send('Cat' + message.author)};
+	
+		else if(message.content.toLowerCase() === 'translate: Chicken'){
+		message.channel.send('鸡' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: 鸡'){
+		message.channel.send('Chicken' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: Dolphin'){
+		message.channel.send('海豚' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: 海豚'){
+		message.channel.send('Dolphin' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: Gorilla'){
+		message.channel.send('大猩猩' + message.author)};
+
+		else if(message.content.toLowerCase() === 'translate: 大猩猩'){
+		message.channel.send('Gorilla' + message.author)};
 	})
 });
 
