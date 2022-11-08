@@ -40,44 +40,6 @@ client.on("messageCreate", (message) => {
 					message.channel.send(`${word.e} ${message.member}`);
 				}				
 			}
-//			if(message.content.includes('watermelon')){
-//				message.channel.send(`西瓜 ${message.member}`);
-//			}
-		}
-/* old code prior to optimization
-		}else if(message.content.toLowerCase() === 'translate: apple'){
-		message.channel.send('苹果' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: banana'){
-		message.channel.send('香蕉' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Strawberry'){
-		message.channel.send('草莓' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Grape'){
-		message.channel.send('葡萄' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: orange'){
-		message.channel.send('橘子' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Dog'){
-		message.channel.send('狗' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 狗'){
-		message.channel.send('Dog' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Cat'){
-		message.channel.send('猫' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 猫'){
-		message.channel.send('Cat' + message.author);
-	
-		}else if(message.content.toLowerCase() === 'translate: Chicken'){
-		message.channel.send('鸡' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 鸡'){
-		message.channel.send('Chicken' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Dolphin'){
-		message.channel.send('海豚' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 海豚'){
-		message.channel.send('Dolphin' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Gorilla'){
-		message.channel.send('大猩猩' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 大猩猩'){
-		message.channel.send('Gorilla' + message.author);
-	}
-	*/
   });
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
