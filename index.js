@@ -4,9 +4,6 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-const { token } = require('./config.json');
- 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages ] });
  
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
@@ -16,10 +13,6 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
 	const command = require(filePath);
-	client.commands.set(command.data.name, command);
-    const filePath = path.join(commandsPath, file);
-    const command = require(filePath);
-    client.commands.set(command.data.name, command);
 }
 
 const dictionary = [{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'banana', c:'香蕉'},{e:'strawberry', c:'草莓'},{e:'grape', c:'葡萄'},{e:'orange', c:'橘子'},{e:'dog', c:'狗'},{e:'cat', c:'猫'},{e:'chicken', c:'鸡'},{e:'dolphin', c:'海豚'},{e:'gorilla', c:'大猩猩'}];
@@ -27,7 +20,6 @@ const dictionary = [{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'ban
 
 client.once('ready', () => {
 	console.log('Ready!');
-    console.log('Ready!');
 });
 
  
@@ -122,17 +114,8 @@ client.on('interactionCreate', async interaction => {
 
     const command = client.commands.get(interaction.commandName);
 
-    if (!command) return;
 
-    try {
-        await command.execute(interaction);
-    } catch (error) {
-        console.error(error);
-        await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-    }
 });
 });
-
-client.login(token);
 
 client.login(token);
