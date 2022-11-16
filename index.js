@@ -20,6 +20,7 @@ const dictionary = [{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'ban
 
 client.once('ready', () => {
 	console.log('Ready!');
+
 });
 
  
@@ -114,7 +115,14 @@ client.on('interactionCreate', async interaction => {
 
     const command = client.commands.get(interaction.commandName);
 
+    if (!command) return;
 
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        console.error(error);
+        await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+    }
 });
 });
 
