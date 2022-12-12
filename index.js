@@ -15,14 +15,6 @@ for (const file of commandFiles) {
 	const command = require(filePath);
 }
 
-const dictionary = [{e:'watermelon', c:'西瓜'},{e:'apple', c:'苹果'},{e:'banana', c:'香蕉'},{e:'strawberry', c:'草莓'},{e:'grape', c:'葡萄'},{e:'orange', c:'橘子'},{e:'dog', c:'狗'},{e:'cat', c:'猫'},{e:'chicken', c:'鸡'},{e:'dolphin', c:'海豚'},{e:'gorilla', c:'大猩猩'}];
-
-
-client.once('ready', () => {
-	console.log('Ready!');
-
-});
-
  
 client.on("messageCreate", (message) => {
 	if (message.author.bot) return false; 
@@ -51,45 +43,30 @@ client.on("messageCreate", (message) => {
 				}				
 
 			}
-//			if(message.content.includes('watermelon')){
-//				message.channel.send(`西瓜 ${message.member}`);
-//			}
+
 		}
-/* old code prior to optimization
-		}else if(message.content.toLowerCase() === 'translate: apple'){
-		message.channel.send('苹果' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: banana'){
-		message.channel.send('香蕉' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Strawberry'){
-		message.channel.send('草莓' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Grape'){
-		message.channel.send('葡萄' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: orange'){
-		message.channel.send('橘子' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Dog'){
-		message.channel.send('狗' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 狗'){
-		message.channel.send('Dog' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Cat'){
-		message.channel.send('猫' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 猫'){
-		message.channel.send('Cat' + message.author);
-	
-		}else if(message.content.toLowerCase() === 'translate: Chicken'){
-		message.channel.send('鸡' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 鸡'){
-		message.channel.send('Chicken' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Dolphin'){
-		message.channel.send('海豚' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 海豚'){
-		message.channel.send('Dolphin' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: Gorilla'){
-		message.channel.send('大猩猩' + message.author);
-		}else if(message.content.toLowerCase() === 'translate: 大猩猩'){
-		message.channel.send('Gorilla' + message.author);
-	}
-	*/
+
     if (message.author.bot) return false;
+
+	fetch('https://www.bing.com/search?q=google+translate&cvid=db4a379e96c74e20b682143c137da279&aqs=edge.0.69i59j46j69i59j0l5j69i60j69i11004.2285j0j1&pglt=41&FORM=ANNAB1&PC=U531')
+method 'Post',
+body: {
+	name: 'User 1'
+}
+});
+.than(res.ok) {
+	console.log('SUCCESS')
+} else {
+	console.log("Not Succesful")
+}
+})
+.then(data => console.log(data))
+.catch(error => console.log('ERROR'))
+
+client.once('ready', () => {
+	console.log('Ready!');
+
+});
 
     console.log(`Message from ${message.author.username}: ${message.content}`);
   });
@@ -110,7 +87,7 @@ client.on('interactionCreate', async interaction => {
 	}
 
 	client.on('message', message => {
-
+		
 });
 
 client.login(token);
