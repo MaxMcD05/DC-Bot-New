@@ -19,36 +19,7 @@ for (const file of commandFiles) {
 client.on("messageCreate", (message) => {
 	if (message.author.bot) return false; 
 	console.log(`Message from ${message.author.username}: ${message.content}`);
-	if(message.content.toLowerCase() === 'shut ur mouth'){
-		message.channel.send(`do not say that ${message.member}`);
-
-		} else if(message.content.toLowerCase() === 'bot dif'){
-			message.channel.send('cap, Zoid dif' + message.author);
-
-		}else if(message.content.toUpperCase() === 'Help'){
-		message.channel.send('nah' + message.author);
-
-		}else if(message.content.toLowerCase() === 'L'){
-		message.channel.send('Tis what i am saying' + message.author);
-
-		}
-		if(message.content.startsWith('translate: ')){
-			for (var word of dictionary) {
-				console.log(word);
-				if(message.content.includes(word.e)){
-					message.channel.send(`${word.c} ${message.member}`);
-				}
-				if(message.content.includes(word.c)){
-					message.channel.send(`${word.e} ${message.member}`);
-				}				
-
-			}
-
-		}
-
-    if (message.author.bot) return false;
-
-	fetch('https://www.bing.com/search?q=google+translate&cvid=db4a379e96c74e20b682143c137da279&aqs=edge.0.69i59j46j69i59j0l5j69i60j69i11004.2285j0j1&pglt=41&FORM=ANNAB1&PC=U531')
+message.content === fetch('https://www.bing.com/search?q=google+translate&cvid=db4a379e96c74e20b682143c137da279&aqs=edge.0.69i59j46j69i59j0l5j69i60j69i11004.2285j0j1&pglt=41&FORM=ANNAB1&PC=U531')
 method 'Post',
 body: {
 	name: 'User 1'
