@@ -4,51 +4,49 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+
  
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
- 
+
 for (const file of commandFiles) {
-	const filePath = path.join(commandsPath, file);
-	const command = require(filePath);
+	client.commands.set(command.data.name, command);
+    const filePath = path.join(commandsPath, file);
+    const command = require(filePath);
 }
 
- 
-client.on("messageCreate", (message) => {
-	if (message.author.bot) return false; 
-	console.log(`Message from ${message.author.username}: ${message.content}`);
-message.content === fetch('https://www.bing.com/search?q=google+translate&cvid=db4a379e96c74e20b682143c137da279&aqs=edge.0.69i59j46j69i59j0l5j69i60j69i11004.2285j0j1&pglt=41&FORM=ANNAB1&PC=U531')
-method 'Post',
-body: {
-	name: 'User 1'
-}
-});
-.than(res.ok) {
-	console.log('SUCCESS')
-} else {
-	console.log("Not Succesful")
-}
-})
-.then(data => console.log(data))
-.catch(error => console.log('ERROR'))
 
 client.once('ready', () => {
 	console.log('Ready!');
-
 });
 
-    console.log(`Message from ${message.author.username}: ${message.content}`);
-  });
+client.on("messageCreate", (message) => {
+	if (message.author.bot) return false; 
+	console.log(`Message from ${message.author.username}: ${message.content}`);
+	
 
- 
+		if(message.content.startsWith('translate: ')){
+			for (var word of dictionary) {
+				console.log(word);
+				if(message.content.includes(word.e)){
+					message.channel.send(`${word.c} ${message.member}`);
+				}
+				if(message.content.includes(word.c)){
+					message.channel.send(`${word.e} ${message.member}`);
+				}				
+
+			}
+  };
+    console.log(`Message from ${message.author.username}: ${message.content}`);
+
+
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
 	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
+    if (!command) return;
 
 	try {
 		await command.execute(interaction);
@@ -56,9 +54,17 @@ client.on('interactionCreate', async interaction => {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
+    client.on('message', message => {
+fetch('https://translate.google.com/?sl=auto&tl=zh-CN&op=translate',{
+method: "POST", // specify that you want to post the string
+body: message.content}) // specify the string to post in the body of the request
 
-	client.on('message', message => {
-		
+  .then(response => {
+    return response.json();
+  })
+  .then(jsonResponse => {
+    // where we tell it what to get
 });
+
 
 client.login(token);
