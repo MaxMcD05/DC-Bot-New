@@ -26,7 +26,7 @@ client.on("messageCreate", (message) => {
 	if (message.author.bot) return false; 
 	console.log(`Message from ${message.author.username}: ${message.content}`);
 	
-		}
+
 		if(message.content.startsWith('translate: ')){
 			for (var word of dictionary) {
 				console.log(word);
@@ -38,7 +38,7 @@ client.on("messageCreate", (message) => {
 				}				
 
 			}
-  });
+  };
     console.log(`Message from ${message.author.username}: ${message.content}`);
 
 
@@ -63,7 +63,8 @@ body: message.content}) // specify the string to post in the body of the request
     return response.json();
   })
   .then(jsonResponse => {
-    // where we tell it what to get
+	if ${message.content.c} = ${word.c}, then((return) ${word.e});
+	else ${message.content.c} = ${word.e}, then((return) ${word.c});
 });
 
 
