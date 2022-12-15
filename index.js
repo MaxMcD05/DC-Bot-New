@@ -40,6 +40,16 @@ client.on('message', message => {
         method: "POST", // specify string
         body: message.content // specify the string to post in the body of the request
     })
+
+	.then(response => response.json())
+  .then(data => {
+    // Extract the value you want from the data object
+    let value = data.translation;
+    //c and e output
+  })
+  .catch(error => {
+  });
+
     .then(response => {
         return response.json();
     }) //returning api value back
