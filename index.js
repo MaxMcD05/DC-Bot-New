@@ -95,6 +95,15 @@ client.on('interactionCreate', async interaction => {
 					e.code = 'BAD_NETWORK';
 				}
 				throw e;
+
+				var c;
+				c = new Error();
+				if(err.statusCode !== undefined && err.statusCode !== 200) {
+					c.code = 'BAD_REQUEST';
+				} else {
+					c.code = 'BAD_NETWORK';
+				}
+				throw c;
 			});
 			
 			module.exports = translate;
