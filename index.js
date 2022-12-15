@@ -100,4 +100,4 @@ client.on('interactionCreate', async interaction => {
 			module.exports = translate;
 			module.exports.languages = languages;
 			
-			client.login(token)
+			client.login(token);
