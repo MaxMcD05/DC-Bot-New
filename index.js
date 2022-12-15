@@ -71,5 +71,33 @@ client.on('interactionCreate', async interaction => {
             if (lang && !languages.isSupported(lang)) {
                 e = new Error();
                 e.code = 400;
-                e.
+                e. message = 'The language \'' + lang + '\' is not supported'};
 
+				if (!interaction.isChatInputCommand()) return;
+			
+				const command = client.commands.get(interaction.commandName);
+				if (!command) return;
+			
+				try {
+					await command.execute(interaction);
+				} catch (error) {
+					console.error(error);
+					await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+				}
+			
+				return result;
+			}).catch(function (err) {
+				var e;
+				e = new Error();
+				if (err.statusCode !== undefined && err.statusCode !== 200) {
+					e.code = 'BAD_REQUEST';
+				} else {
+					e.code = 'BAD_NETWORK';
+				}
+				throw e;
+			});
+			
+			module.exports = translate;
+			module.exports.languages = languages;
+			
+			client.login(token)
