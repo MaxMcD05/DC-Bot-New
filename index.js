@@ -18,18 +18,18 @@ for (const file of commandFiles) {
 client.once('ready', () => {
     console.log('Ready!');
 });
-
+//bot on
 client.on('message', message => {
     if (message.author.bot) return false;
 
     console.log(`Message from ${message.author.username}: ${message.content}`);
-
+//reading message if translate: is used
     if (message.content.startsWith('translate: ')) {
         for (var word of dictionary) {
             console.log(word);
             if (message.content.includes(word.e)) {
                 message.channel.send(`${word.c} ${message.member}`);
-            }
+            } //looking for e or c to determine if it should get english counter or chinese
             if (message.content.includes(word.c)) {
                 message.channel.send(`${word.e} ${message.member}`);
             }
@@ -37,7 +37,7 @@ client.on('message', message => {
     }
 
     fetch('https://translate.google.com/?sl=auto&tl=zh-CN&op=translate', {
-        method: "POST", // specify that you want to post the string
+        method: "POST", // specify string
         body: message.content // specify the string to post in the body of the request
     })
     .then(response => {
