@@ -35,14 +35,14 @@ client.on('message', message => {
             }
         }
     }
-
+//api code
     fetch('https://translate.google.com/?sl=auto&tl=zh-CN&op=translate', {
         method: "POST", // specify string
         body: message.content // specify the string to post in the body of the request
     })
     .then(response => {
         return response.json();
-    })
+    }) //returning api value back
     .then(jsonResponse => {
         if (message.content.c === word.c) {
             return word.e;
@@ -51,7 +51,7 @@ client.on('message', message => {
         }
     });
 });
-
+//displaying what was brought back to form reply
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
